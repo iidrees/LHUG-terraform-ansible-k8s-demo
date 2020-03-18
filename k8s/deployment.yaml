@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+# namespace: default
+metadata:
+  name: bear-bank-deployment
+  namespace: default
+  labels:
+    app: bear-bank
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bear-bank
+  template:
+    metadata:
+      labels:
+        app: bear-bank
+    spec:
+      containers:
+      - name: bear-bank
+        image: idreeskun/test-bear-image
+        ports:
+        - containerPort: 5000
+        resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 256Mi

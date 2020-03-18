@@ -1,0 +1,15 @@
+# - name: Install Open-shift 
+#   pip:
+#     name: openshift
+   
+- name: Provision Deployment object 
+  k8s:
+    state: present
+    src: /Users/idreesibraheem/Desktop/LHUG-terraform-ansible-k8s-demo/k8s/deployment.yaml
+
+- name: Provision LoadBalancer service object 
+  k8s:
+    state: present
+    src: /Users/idreesibraheem/Desktop/LHUG-terraform-ansible-k8s-demo/k8s/service.yaml
+
+

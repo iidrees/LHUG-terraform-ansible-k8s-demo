@@ -1,0 +1,4 @@
+terraform/creds/*.json
+ansible/*json
+terraform/*.tfstate*
+terraform/.terraform
